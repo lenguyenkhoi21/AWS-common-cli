@@ -1,0 +1,6 @@
+ARN format
+    arn:partition:service:region:account-id:resource-id
+    arn:partition:service:region:account-id:resource-type/resource-id
+    arn:partition:service:region:account-id:resource-type:resource-id
+
+ex: arn:aws:iam::aws:policy/IAMFullAccess

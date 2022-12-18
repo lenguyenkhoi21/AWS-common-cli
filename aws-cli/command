@@ -1,0 +1,19 @@
+Using AWS:
+    Command structure: aws <command> <subcommand> [options and parameters]
+        EX: aws s3 ls
+            aws cloudformation create-change-set --stack-name my-stack --change-set-name my-change-set
+    Wait commands: aws <command> wait <subcommand> [options and parameters]
+        EX: aws cloudformation wait change-set-create-complete --stack-name my-stack --change-set-name my-change-set
+            aws deploy wait deployment-successful --deployment-id d-A1B2C3111
+
+command:
+    configure:
+        EX: aws configure import --csv file://new_user_credentials.csv --profile admin
+            aws configure list-profiles
+            aws configure --profile lenguyenkhoi21
+
+    iam:
+        aws iam create-user --user-name=lenguyenkhoi21 --profile=admin
+        aws iam attach-user-policy --user-name=lenguyenkhoi21 --policy-arn=arn:aws:iam::aws:policy/IAMFullAccess --profile=admin
+
+
