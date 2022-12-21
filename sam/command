@@ -1,0 +1,1 @@
+sam local start-lambda -t .\build\sam.jvm.yaml  --profile lenguyenkhoi21
