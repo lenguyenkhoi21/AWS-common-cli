@@ -1,0 +1,6 @@
+/mnt/d/Google Chrome Download/graalvm-ce-java11-linux-amd64-22.3.0.tar.gz
+cp '/mnt/d/Google Chrome Download/graalvm-ce-java11-linux-amd64-22.3.0.tar.gz' ~/java
+tar -xzf graalvm-ce-java11-linux-amd64-22.3.0.tar.gz
+/home/milu/java/graalvm-ce-java11-22.3.0
+export PATH=/home/milu/java/graalvm-ce-java11-22.3.0/bin:$PATH
+export JAVA_HOME=/home/milu/java/graalvm-ce-java11-22.3.0

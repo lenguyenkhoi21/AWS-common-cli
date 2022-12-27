@@ -1,1 +1,3 @@
 sam local start-lambda -t .\build\sam.jvm.yaml  --profile lenguyenkhoi21
+sam local start-lambda -t .\sam.native.yaml  --profile lenguyenkhoi21
+sam local invoke --event .\payload.json --template .\build\sam.native.yaml
