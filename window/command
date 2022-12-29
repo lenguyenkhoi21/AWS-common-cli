@@ -1,0 +1,3 @@
+List port:
+    netstat -ano | findStr "8080"
+    tasklist /fi "pid eq 2216"
