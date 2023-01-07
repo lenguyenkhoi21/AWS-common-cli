@@ -1,0 +1,1 @@
+./gradlew clean build -DLAMBDA_ROLE_ARN="arn:aws:iam::160338041216:role/lambda-ex" -Dquarkus.package.type=native -x test
