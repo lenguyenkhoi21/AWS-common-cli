@@ -16,6 +16,9 @@ command:
         aws iam create-user --user-name=lenguyenkhoi21 --profile=admin
         aws iam attach-user-policy --user-name=lenguyenkhoi21 --policy-arn=arn:aws:iam::aws:policy/IAMFullAccess --profile=admin
 
-    lambda
+    lambda:
         aws lambda invoke --function-name QuarkusLambdaHelloworld --endpoint-url "http://127.0.0.1:3001" out.json
         aws lambda invoke --function-name QuarkusLambdaHelloworld --debug --endpoint-url "http://127.0.0.1:3001" out.json
+
+    cloudformation:
+        aws cloudformation delete-stack --stack-name <<stack-name>>
