@@ -4,17 +4,20 @@ sam local start-lambda -d 3002 -t .\sam.native.yaml --profile lenguyenkhoi21
 sam local start-lambda --warm-containers EAGER -t .\sam.jvm.yaml --profile lenguyenkhoi21
 sam local start-lambda --warm-containers EAGER -t .\sam.native.yaml --profile lenguyenkhoi21
 sam local start-api --host 127.0.0.1 -p 3000 --warm-containers EAGER -t .\sam.jvm.yaml --profile lenguyenkhoi21
+sam local start-api --host 127.0.0.1 -p 3000 --warm-containers EAGER -t .\sam.native.yaml --profile lenguyenkhoi21
 sam local invoke --event .\payload.json --template .\build\sam.native.yaml
 sam local invoke "QuarkusLambdaHelloworldNative" -e .\payload.json -t .\build\sam.native.yaml --profile lenguyenkhoi21
 sam local invoke "QuarkusLambdaHelloworldNative" -d 3001 --container-host 127.0.0.1 -e .\payload.json -t .\build\sam.jvm.yaml --profile lenguyenkhoi21
 sam local invoke "QuarkusLambdaHelloworld" -d 3001 --container-host 127.0.0.1 -e .\payload.json -t .\build\sam.jvm.yaml --profile lenguyenkhoi21
 'sam local generate-event apigateway aws-proxy --body "{\"name\":\"Bill\"}" --path "greetinglambda" --method POST > api-event.json'
 
-'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml .\ --role-arn <<role>> --profile lenguyenkhoi21 --resolve-s3 --guided' (error)
-'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml .\ --role-arn role --profile lenguyenkhoi21 --resolve-s3' (error)
-'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml .\ --role-arn <<role>> --s3-bucket quarkuslambdahelloworldjvms3 --guided' (error)
-'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml .\ --role-arn <<role>> --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3' (error)
+'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml --role-arn <<role>> --profile lenguyenkhoi21 --resolve-s3 --guided' (error)
+'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml --role-arn role --profile lenguyenkhoi21 --resolve-s3' (error)
+'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml --role-arn <<role>> --s3-bucket quarkuslambdahelloworldjvms3 --guided' (error)
+'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml --role-arn <<role>> --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3' (error)
 
-'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml .\ --capabilities CAPABILITY_IAM --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3 --guided'
-'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml .\ --capabilities CAPABILITY_IAM --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3'
-'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml .\ --capabilities CAPABILITY_IAM --debug --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3'
+'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml --capabilities CAPABILITY_IAM --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3 --guided'
+'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml --capabilities CAPABILITY_IAM --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3'
+'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml --capabilities CAPABILITY_IAM --debug --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3'
+
+'sam deploy --stack-name QuarkusLambdaHelloworldNative  --template .\build\sam.native.yaml --capabilities CAPABILITY_IAM --debug --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3/native'
