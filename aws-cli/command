@@ -19,6 +19,7 @@ command:
     lambda:
         aws lambda invoke --function-name QuarkusLambdaHelloworld --endpoint-url "http://127.0.0.1:3001" out.json
         aws lambda invoke --function-name QuarkusLambdaHelloworld --debug --endpoint-url "http://127.0.0.1:3001" out.json
+        aws lambda invoke --function-name QuarkusLambdaHelloworldNative --debug --endpoint-url "http://127.0.0.1:3000" out.json
 
     cloudformation:
         aws cloudformation delete-stack --stack-name aws-sam-cli-managed-default --profile lenguyenkhoi21
