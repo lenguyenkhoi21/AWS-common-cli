@@ -20,4 +20,4 @@ sam local invoke "QuarkusLambdaHelloworld" -d 3001 --container-host 127.0.0.1 -e
 'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml --capabilities CAPABILITY_IAM --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3'
 'sam deploy --stack-name QuarkusLambdaHelloworldJVM  --template .\build\sam.jvm.yaml --capabilities CAPABILITY_IAM --debug --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3'
 
-'sam deploy --stack-name QuarkusLambdaHelloworldNative  --template .\build\sam.native.yaml --capabilities CAPABILITY_IAM --debug --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldjvms3/native'
+'sam deploy --stack-name QuarkusLambdaHelloworldNative  --template .\build\sam.native.yaml --capabilities CAPABILITY_IAM --debug --profile lenguyenkhoi21 --s3-bucket quarkuslambdahelloworldnatives3'
