@@ -25,3 +25,6 @@ command:
         aws cloudformation delete-stack --stack-name aws-sam-cli-managed-default --profile lenguyenkhoi21
         aws cloudformation list-stacks --region ap-southeast-1 --profile lenguyenkhoi21 > result.json
         aws cloudformation describe-stacks --stack-name aws-sam-cli-managed-default --profile lenguyenkhoi21 > result.json
+
+    dynamodb:
+        aws dynamodb create-table --table-name HelloQuarkus --attribute-definitions AttributeName=hello_id,AttributeType=S --key-schema AttributeName=hello_name,AttributeType=S --key-schema AttributeName=hello_id,KeyType=HASH --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 --profile lenguyenkhoi21
